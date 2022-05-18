@@ -6,6 +6,11 @@ import {convertToMinutes} from './utils/convertToMinutes';
 import {BsTrashFill} from 'react-icons/bs'
 import {BsTrash} from 'react-icons/bs'
 import {toast} from 'react-toastify';
+import {IoAddCircleOutline} from 'react-icons/io5';
+import { Link } from "react-router-dom";
+import {IoAddCircle} from 'react-icons/io5';
+
+
 
  function App() {
   const [search, setSearch] = useState("");
@@ -20,14 +25,13 @@ import {toast} from 'react-toastify';
         })
 
 
-
-        if(!response.data.data.length) {
-          toast.warn('Nenhum album foi encontrado!')
-          return;
-        }
         setAlbums(response.data.data);
 
-        toast.success('Albuns filtrados com sucesso!')
+        if(!response.data.data.length) {
+          toast.warn('Nenhum álbum foi encontrado!')
+          return;
+        }
+
 
       } catch (error) {
         console.log(error)
@@ -36,16 +40,19 @@ import {toast} from 'react-toastify';
 
     async function handleDeleteAlbum(id){
       try {
-        await api.delete(`/album/${id}`); alert("Album deletado com sucesso!")
+        await api.delete(`/album/${id}`); toast.success("Álbum deletado com sucesso!")
         return handleSearch()
-      } catch (error) {
+
+      } 
+      
+      catch (error) {
         console.log(error)
       }
     }
 
     async function handleDeleteSong(id){
       try {
-        await api.delete(`/track/${id}`); alert("Faixa deletada com sucesso!")
+        await api.delete(`/track/${id}`); toast.success("Faixa deletada com sucesso!")
         return handleSearch()
       } catch (error) {
         console.log(error)
@@ -72,14 +79,14 @@ import {toast} from 'react-toastify';
             value={search}
              onChange={event => setSearch(event.target.value)}
               type="text"
-               placeholder='Album / Ano do Album / Faixa' />
+               placeholder='Digite o nome de um Álbum' />
          </div>
          <button onClick={handleSearch}>Procurar</button>
       </main>
         {
           albums.map(album => (
             <div className="album-wrapper" key={album.id}>
-            <div className="album-name"><span>Álbum: {album.name}, {album.year}  </span> <a className= "delete-album" onClick={() => handleDeleteAlbum(album.id)}><BsTrashFill></BsTrashFill></a> </div><br />
+            <div className="album-name"><span>Álbum: {album.name}, {album.year}  </span> <a title="Excluir Album" className= "delete-album" onClick={() => handleDeleteAlbum(album.id)}><BsTrashFill></BsTrashFill></a> </div><br />
             
             <div className="songs-group">
 
@@ -90,23 +97,27 @@ import {toast} from 'react-toastify';
               <div className="songs">
                 
                 {
-                album.tracks.map(track => (
-                  <div className="song" key={track.id}>
-                  <p className="number">{track.number}</p>
-                  <p className="song">{track.title}</p>
-                  <p className="duration">{convertToMinutes(track.duration)} min</p>
-                  <a className= 'delete-song' onClick={() => handleDeleteSong(track.id)}><BsTrash></BsTrash></a>
-                </div>
-                ))
-
+                  album.tracks.map(track => (
+                    <div className="song" key={track.id}>
+                    <p className="number">{track.number}</p>
+                    <p className="song">{track.title}</p>
+                    <p className="duration">{convertToMinutes(track.duration)} min</p>
+                    <a title="Excluir Faixa" className= 'delete-song' onClick={() => handleDeleteSong(track.id)}><BsTrash></BsTrash></a>
+                  </div>
+                  ))
                 }
-
+              <Link to={`/${album.id}/nova-musica`} title="Adicionar nova Faixa" className="add-song-button" ><IoAddCircleOutline></IoAddCircleOutline></Link>
             </div>
 
          </div>
+
+            
           ))
         }
-         
+        <div className="album-add">
+           <span>Criar novo Álbum </span> 
+           <Link to="/novo-album" title="Criar novo Álbum" className= "add-album" ><IoAddCircle></IoAddCircle></Link> 
+        </div><br />
       
        
    </div>

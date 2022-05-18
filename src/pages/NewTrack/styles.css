@@ -1,0 +1,105 @@
+.new-track{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 4fr 0.5fr 0.5fr 0.5fr;
+    margin-top: 24px;
+    align-items: center;
+}
+
+.song-name{
+    margin-right: 6px;
+    margin-left: 10px;
+}
+
+.input-duration{
+    width:45px;
+    border:none;
+    border-radius: 50px;
+    outline:0;
+    padding-left: 10px;
+    padding-bottom:2px;
+    font-weight: 700;
+    border: 1px solid white;
+    margin-right: 10px;
+    
+}
+
+
+.input-duration:hover{
+    border: 1px solid black;
+}
+
+.input-duration:focus {
+    border: 1px solid black;
+  }
+
+.input-song{
+    border:none;
+    border-radius: 50px;
+    outline:0;
+    padding-left: 10px;
+    padding-bottom:2px;
+    font-weight: 700;
+    width: 100%;
+    margin-right: 10px;
+    border: 1px solid white;
+}
+
+.input-song:hover{
+    border: 1px solid black;
+}
+
+.input-song:focus {
+    border: 1px solid black;
+  }
+  
+
+
+
+.duration-song{
+    padding-left: 10px;
+    display: flex;
+    justify-content:end;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.add-song{
+    font-size: 29px;
+    display: flex;
+    justify-content: end;
+
+    cursor: pointer;
+    color: rgba(0, 119, 255, 0.5);
+
+}
+
+.add-song:hover{
+    color:rgba(0, 119, 255, 1);
+  }
+
+.song-number{
+    display: flex;
+    justify-content:end;
+}
+
+.input-number{
+    border:none;
+    border-radius: 50px;
+    outline:0;
+    padding-left: 10px;
+    padding-bottom:2px;
+    font-weight: 700;
+    width: 60%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.input-number:focus {
+    border: 1px solid black;
+  }
+
+  .input-number:hover{
+    border: 1px solid black;
+}
+
+

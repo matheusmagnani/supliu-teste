@@ -1,5 +1,12 @@
 function convertToMinutes (seconds){
     const minutes = seconds / 60;
-    return String(minutes).replace('.', ':')
+    return String(minutes.toFixed(2)).replace('.', ':')
 }
-export {convertToMinutes}
+
+function convertToSeconds(minutes){
+    
+    const seconds = Number(minutes.replace(':', '.')) * 60;
+    return seconds
+}
+
+export {convertToMinutes, convertToSeconds}

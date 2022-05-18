@@ -10,7 +10,7 @@
 
 .container{
   width: 75%;
-  height: 100vh;
+  height: 100%;
   margin-bottom: 10px;
   padding: 16px;
   position: center;
@@ -99,6 +99,8 @@ main button{
   
 }
 
+
+
 main button:hover {
  
   background-color: rgba(0, 119, 255, 1);
@@ -118,6 +120,9 @@ span{
   display: flex;
   align-items:center;
   justify-content: space-between;
+  padding-inline: 10px;
+    padding-top: 2px;
+  border: 1.5px solid transparent;
 }
  
 .delete-album{
@@ -126,11 +131,11 @@ span{
 
 div.songs-group{
     display:grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 0.6fr 4fr 1fr;
     font-weight: 700;
     font-size: 16px;
     margin-top: 0;
-    margin-bottom: 18px;
+    margin-bottom: 6px;
     
     
 }
@@ -165,8 +170,56 @@ div.song{
   padding-left: 10px;
 }
 
+
 div.song:hover{
   border: 1px solid black;
   border-radius: 50px;
   
+}
+
+div.album-name:hover{
+  border: 1.5px solid black;
+  border-radius: 50px;
+
+  
+}
+
+.add-song-button{
+  margin-left: 6px;
+  font-size: 20px;
+
+  cursor: pointer;
+  color:rgba(0, 119, 255, 0.5);
+}
+.add-song-button:hover{
+  color:rgba(0, 119, 255, 1);
+}
+
+.album-add{
+  margin-top: 40px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-inline: 10px;
+  padding-top: 2px;
+  border: 1.5px solid transparent;
+  margin-right: 6px;
+  margin-left: 10px;
+  
+}
+
+
+div.album-add:hover{
+  border: 1.5px solid black;
+  border-radius: 50px;
+
+  
+}
+
+.add-album{
+  color:rgba(0, 119, 255, 0.5);
+}
+
+.add-album:hover{
+  color:rgba(0, 119, 255, 1);
 }

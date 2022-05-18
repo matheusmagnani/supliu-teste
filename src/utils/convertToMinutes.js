@@ -6,7 +6,7 @@ function convertToMinutes (seconds){
 function convertToSeconds(minutes){
     
     const seconds = Number(minutes.replace(':', '.')) * 60;
-    return seconds
+    return Math.round(seconds)
 }
 
 export {convertToMinutes, convertToSeconds}

@@ -1,0 +1,172 @@
+
+:root{
+  background: url(background.png) no-repeat fixed;
+  background-size: 100% ;
+}
+
+*{
+  font-family: 'Araboto Light', Arial, Sans-serif ;
+}
+
+.container{
+  width: 75%;
+  height: 100vh;
+  margin-bottom: 10px;
+  padding: 16px;
+  position: center;
+  margin-inline: auto;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: white;
+  margin-inline: auto;
+  border-radius: 1px;
+  box-shadow: 3px 2px 5px #7D7D7D;
+
+  padding: 16px;
+  height: 60px;
+  width: 75%;
+}
+nav h1{
+  
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+main.body  {
+  display: grid;
+  
+  grid-template-columns: 4fr 1fr;
+  align-items: self-end;
+  margin-bottom: 17px;
+}
+
+p{
+  margin-bottom: 0;
+}
+
+
+.input {
+  border-radius: 50px;
+  border: 0 none;
+  height: 25px;
+  width: 100%;
+  background-color:rgba(255, 255, 255, 1);
+  padding-left: 10px;
+  border: 1px solid rgba(255, 255, 255, 1);
+
+  font-size: 10px;
+  
+  outline: 0;
+
+  font-weight: 700;
+
+  margin-top: 5px;
+  
+  transition: border 0.2s;
+  
+}
+
+
+.input:focus {
+  border: 1px solid rgba(0, 119, 255, 0.5);
+}
+
+
+
+main button{
+  border: 0 none;
+  border-radius:50px;
+  height: 28px;
+  width: 100px;
+  
+  background-color: rgba(0, 119, 255, 0.753);
+  margin-left: 20px;
+
+  color: white;
+  
+  cursor: pointer;
+ 
+  
+  transition: background  0.2s;
+  
+}
+
+main button:hover {
+ 
+  background-color: rgba(0, 119, 255, 1);
+}
+
+div.album-wrapper{
+  margin-top: 40px;
+}
+
+span{
+  font-size: 18px;
+  font-family: 'Araboto Normal', Arial, Sans-serif ;
+  font-weight: 700;
+}
+
+.album-name{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+ 
+.delete-album{
+  cursor: pointer;
+}
+
+div.songs-group{
+    display:grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    
+    
+}
+
+div.song{
+  display: grid;
+  grid-template-columns: 1fr 7fr 1fr 0.5fr;
+  align-items: center;
+  border: 1px solid transparent;
+
+  font-weight: 700;
+  font-size: 12px;
+  margin: 0 0;
+}
+
+
+
+.delete-song, .number, .song, .duration{
+  
+  margin-top: 6px;
+  margin-bottom: 6px;
+ 
+}
+
+.delete-song {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.number {
+  padding-left: 10px;
+}
+
+div.song:hover{
+  border: 1px solid black;
+  border-radius: 50px;
+  
+}
